@@ -31,7 +31,9 @@ namespace VSP.Presentation.Forms
         private HashSet<Control> controlsToMove = new HashSet<Control>();
 
         private frmMain frmMain_Parent;
+    
         public VSP.Business.Entities.PlanAdvisor CurrentPlanAdvisor;
+        private IWin32Window frmPlanAdvisorServices;
 
         /// <summary>
         /// 
@@ -348,6 +350,11 @@ namespace VSP.Presentation.Forms
         private void cboFeeViews_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadDgvFees();
+        }
+
+        private void lblMenuServices_Click(object sender, EventArgs e)
+        {
+            tabControlClientDetail.SelectedTab = tabControlClientDetail.TabPages["tabServices"];
         }
 	}
 }
