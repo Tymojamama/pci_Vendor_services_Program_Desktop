@@ -1,0 +1,418 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{80802DF9-2F43-4D98-AF5C-5C5838BE0C9E}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>VSP</RootNamespace>
+    <AssemblyName>VSP</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <PublishUrl>\\PC03\Vendor Services\VSP\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>true</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <MinimumRequiredVersion>0.1.2.4</MinimumRequiredVersion>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationVersion>0.1.2.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>8B17783821862BA584D600B49D774C92CC33117C</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>VSP.Presentation_2_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>VSP.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\lightbulb.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DocumentationFile>bin\Debug\VSP.xml</DocumentationFile>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <ItemGroup>
+    <Reference Include="DataIntegrationHub.Business, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>\\PC03\Common Ground\IT\Libraries\DataIntegrationHub.Business.dll</HintPath>
+    </Reference>
+    <Reference Include="FastMember, Version=1.0.0.9, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FastMember.1.1.0\lib\net40\FastMember.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PensionConsultants.Data, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>\\PC03\Common Ground\IT\Libraries\PensionConsultants.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\frmAuditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAuditor.Designer.cs">
+      <DependentUpon>frmAuditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAdvisor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAdvisor.Designer.cs">
+      <DependentUpon>frmAdvisor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmPlanParticipantsEligible.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPlanParticipantsEligible.Designer.cs">
+      <DependentUpon>frmPlanParticipantsEligible.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmPlanParticipantsActive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPlanParticipantsActive.Designer.cs">
+      <DependentUpon>frmPlanParticipantsActive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmPlanDistribution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPlanDistribution.Designer.cs">
+      <DependentUpon>frmPlanDistribution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmPlanContribution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPlanContribution.Designer.cs">
+      <DependentUpon>frmPlanContribution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmRecordKeeper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmRecordKeeper.Designer.cs">
+      <DependentUpon>frmRecordKeeper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmProduct.Designer.cs">
+      <DependentUpon>frmProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPlan.Designer.cs">
+      <DependentUpon>frmPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmPlanRecordKeeper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPlanRecordKeeper.Designer.cs">
+      <DependentUpon>frmPlanRecordKeeper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmPlanAdvisor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPlanAdvisor.Designer.cs">
+      <DependentUpon>frmPlanAdvisor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmPlanAuditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPlanAuditor.Designer.cs">
+      <DependentUpon>frmPlanAuditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmPlanRecordKeeperFee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPlanRecordKeeperFee.Designer.cs">
+      <DependentUpon>frmPlanRecordKeeperFee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSearch.Designer.cs">
+      <DependentUpon>frmSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSearchBid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSearchBid.Designer.cs">
+      <DependentUpon>frmSearchBid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSearchRecordKeeper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSearchRecordKeeper.Designer.cs">
+      <DependentUpon>frmSearchRecordKeeper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSearchQuestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSearchQuestion.Designer.cs">
+      <DependentUpon>frmSearchQuestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSearchFund.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSearchFund.Designer.cs">
+      <DependentUpon>frmSearchFund.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmServiceIssue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmServiceIssue.Designer.cs">
+      <DependentUpon>frmServiceIssue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmUser.Designer.cs">
+      <DependentUpon>frmUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmService.Designer.cs">
+      <DependentUpon>frmService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSelectRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSelectRecord.Designer.cs">
+      <DependentUpon>frmSelectRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\Fields\NullHandler.cs" />
+    <Compile Include="Utilities\ListItem.cs" />
+    <Compile Include="Forms\frmAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAccount.Designer.cs">
+      <DependentUpon>frmAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\Pagination.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSplashScreen.Designer.cs">
+      <DependentUpon>frmSplashScreen.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\frmAuditor.resx">
+      <DependentUpon>frmAuditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAdvisor.resx">
+      <DependentUpon>frmAdvisor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPlanParticipantsEligible.resx">
+      <DependentUpon>frmPlanParticipantsEligible.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPlanParticipantsActive.resx">
+      <DependentUpon>frmPlanParticipantsActive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPlanDistribution.resx">
+      <DependentUpon>frmPlanDistribution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPlanContribution.resx">
+      <DependentUpon>frmPlanContribution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmRecordKeeper.resx">
+      <DependentUpon>frmRecordKeeper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmProduct.resx">
+      <DependentUpon>frmProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPlan.resx">
+      <DependentUpon>frmPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPlanRecordKeeper.resx">
+      <DependentUpon>frmPlanRecordKeeper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPlanAdvisor.resx">
+      <DependentUpon>frmPlanAdvisor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPlanAuditor.resx">
+      <DependentUpon>frmPlanAuditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPlanRecordKeeperFee.resx">
+      <DependentUpon>frmPlanRecordKeeperFee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSearch.resx">
+      <DependentUpon>frmSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSearchBid.resx">
+      <DependentUpon>frmSearchBid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSearchRecordKeeper.resx">
+      <DependentUpon>frmSearchRecordKeeper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSearchQuestion.resx">
+      <DependentUpon>frmSearchQuestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSearchFund.resx">
+      <DependentUpon>frmSearchFund.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmServiceIssue.resx">
+      <DependentUpon>frmServiceIssue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmUser.resx">
+      <DependentUpon>frmUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmService.resx">
+      <DependentUpon>frmService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSelectRecord.resx">
+      <DependentUpon>frmSelectRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAccount.resx">
+      <DependentUpon>frmAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSplashScreen.resx">
+      <DependentUpon>frmSplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="VSP.Presentation_1_TemporaryKey.pfx" />
+    <None Include="VSP.Presentation_2_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x.png" />
+    <None Include="Resources\plus.png" />
+    <None Include="Resources\save.png" />
+    <None Include="Resources\lightbulb.png" />
+    <None Include="Resources\advisors.png" />
+    <None Include="Resources\customers.png" />
+    <None Include="Resources\arrowUp.png" />
+    <None Include="Resources\arrowDown.png" />
+    <Content Include="Resources\lightbulb.ico" />
+    <None Include="Resources\managers.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\pci-investment-services-program\ISP.Business\ISP.Business.csproj">
+      <Project>{d37153ea-6f66-4472-8097-6dedb9df86d1}</Project>
+      <Name>ISP.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VSP.Business\VSP.Business.csproj">
+      <Project>{8a320d7c-0bee-4a9f-963f-ab75b2d49015}</Project>
+      <Name>VSP.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VSP.Security\VSP.Security.csproj">
+      <Project>{0bcc1867-b6fc-4019-bce7-159efd5015de}</Project>
+      <Name>VSP.Security</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
