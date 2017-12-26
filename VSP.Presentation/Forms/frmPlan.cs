@@ -344,15 +344,6 @@ namespace VSP.Presentation.Forms
             LoadDgvAuditors();
         }
 
-        private void dgvAuditors_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int index = dgvAuditors.CurrentRow.Index;
-            Guid planAuditorId = new Guid(dgvAuditors.Rows[index].Cells["AuditorId"].Value.ToString());
-            PlanAuditor planAuditors = new PlanAuditor(planAuditorId);
-            frmPlanAuditor frmPlanRecordKeeper = new frmPlanAuditor(frmMain_Parent, planAuditors);
-          //  frmPlanAuditor.FormClosed += frmPlanRecordKeeper_FormClosed;
-        }
-
         private void LoadDgvAdvisors()
         {
             DataTable dataTable = VSP.Business.Entities.PlanAdvisor.GetAssociated(CurrentPlan.PlanId);
@@ -495,7 +486,7 @@ namespace VSP.Presentation.Forms
             }
         }
 
-       /* private void frmPlanAuditor_FormClosed(object sender, FormClosedEventArgs e)
+     /* private void frmPlanAuditor_FormClosed(object sender, FormClosedEventArgs e)
         {
             LoadDgvAuditors();
         }
@@ -1060,6 +1051,15 @@ namespace VSP.Presentation.Forms
                 obj.DeleteRecordFromDatabase();
                 LoadDgvEligibleParticipants();
             }
+        }
+
+        private void dgvAuditors_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = dgvAuditors.CurrentRow.Index;
+            Guid planAuditorId = new Guid(dgvAuditors.Rows[index].Cells["AuditorId"].Value.ToString());
+            PlanAuditor planAuditors = new PlanAuditor(planAuditorId);
+            frmPlanAuditor frmPlanAuditor = new frmPlanAuditor(frmMain_Parent, planAuditors);
+            //  frmPlanAuditor.FormClosed += frmPlanRecordKeeper_FormClosed;
         }
 	}
 }
