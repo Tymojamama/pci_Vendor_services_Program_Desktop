@@ -334,6 +334,7 @@
             this.dgvClients.ShowEditingIcon = false;
             this.dgvClients.Size = new System.Drawing.Size(1017, 402);
             this.dgvClients.TabIndex = 22;
+            this.dgvClients.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClients_CellContentClick);
             this.dgvClients.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClients_CellDoubleClick);
             // 
             // label11
