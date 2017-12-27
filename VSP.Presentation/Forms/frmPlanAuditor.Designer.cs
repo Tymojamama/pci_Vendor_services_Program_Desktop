@@ -47,6 +47,8 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label56 = new System.Windows.Forms.Label();
             this.tabControlClientDetail = new System.Windows.Forms.TabControl();
+            this.lblMenuServices = new System.Windows.Forms.Label();
+            this.lblMenuFees = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel16.SuspendLayout();
@@ -99,6 +101,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.Silver;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.lblMenuFees);
+            this.panel3.Controls.Add(this.lblMenuServices);
             this.panel3.Controls.Add(this.label46);
             this.panel3.Location = new System.Drawing.Point(0, 615);
             this.panel3.Name = "panel3";
@@ -414,6 +418,32 @@
             this.tabControlClientDetail.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControlClientDetail.TabIndex = 37;
             // 
+            // lblMenuServices
+            // 
+            this.lblMenuServices.AutoSize = true;
+            this.lblMenuServices.BackColor = System.Drawing.Color.Transparent;
+            this.lblMenuServices.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblMenuServices.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMenuServices.ForeColor = System.Drawing.Color.Black;
+            this.lblMenuServices.Location = new System.Drawing.Point(117, 15);
+            this.lblMenuServices.Name = "lblMenuServices";
+            this.lblMenuServices.Size = new System.Drawing.Size(86, 25);
+            this.lblMenuServices.TabIndex = 61;
+            this.lblMenuServices.Text = "Services";
+            // 
+            // lblMenuFees
+            // 
+            this.lblMenuFees.AutoSize = true;
+            this.lblMenuFees.BackColor = System.Drawing.Color.Transparent;
+            this.lblMenuFees.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblMenuFees.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMenuFees.ForeColor = System.Drawing.Color.Black;
+            this.lblMenuFees.Location = new System.Drawing.Point(209, 15);
+            this.lblMenuFees.Name = "lblMenuFees";
+            this.lblMenuFees.Size = new System.Drawing.Size(53, 25);
+            this.lblMenuFees.TabIndex = 62;
+            this.lblMenuFees.Text = "Fees";
+            // 
             // frmPlanAuditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -474,5 +504,7 @@
         public System.Windows.Forms.RichTextBox txtDateAdded;
         public System.Windows.Forms.ComboBox cboPlan;
         public System.Windows.Forms.ComboBox cboAuditor;
+        private System.Windows.Forms.Label lblMenuServices;
+        private System.Windows.Forms.Label lblMenuFees;
 	}
 }
