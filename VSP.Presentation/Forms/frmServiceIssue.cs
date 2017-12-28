@@ -16,7 +16,13 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace VSP.Presentation.Forms
-{
+{/*/TODO:
+    //define the advisorId and link it to the field that needs to be created for the services issues to include an advisorId, 
+    //so I can include an issues tab 
+    *   This will then resume normal use of the advisor tab in the plan.
+    *   Just keep going, you can DO IT!
+    * 
+    * */
 	public partial class frmServiceIssue : Form, IMessageFilter
     {
         public const int WM_NCLBUTTONDOWN = 0xA1;
