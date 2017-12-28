@@ -33,6 +33,12 @@ namespace VSP.Presentation.Forms
         private frmMain frmMain_Parent;
         public VSP.Business.Entities.Auditor CurrentAuditor;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="mf"></param>
+        /// <param name="accountId"></param>
+        /// <param name="Close"></param>
         public frmAuditor(frmMain mf, VSP.Business.Entities.Auditor auditor, FormClosedEventHandler Close = null)
         {
             frmSplashScreen ss = new frmSplashScreen();
@@ -237,6 +243,7 @@ namespace VSP.Presentation.Forms
             dgvIssues.Columns["CreatedBy"].Visible = false;
             dgvIssues.Columns["ModifiedBy"].Visible = false;
             dgvIssues.Columns["StateCode"].Visible = false;
+            dgvIssues.Columns["AdvisorId"].Visible = false;
 
             dgvIssues.Columns["SubjectValue"].DisplayIndex = 0;
             dgvIssues.Columns["Plan"].DisplayIndex = 1;

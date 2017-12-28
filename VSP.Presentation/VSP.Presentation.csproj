@@ -278,6 +278,11 @@
     <Compile Include="Forms\frmSplashScreen.Designer.cs">
       <DependentUpon>frmSplashScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="VendorServicesProgramDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VendorServicesProgramDataSet1.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\frmAuditor.resx">
       <DependentUpon>frmAuditor.cs</DependentUpon>
     </EmbeddedResource>
@@ -358,11 +363,23 @@
     <EmbeddedResource Include="Forms\frmSplashScreen.resx">
       <DependentUpon>frmSplashScreen.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="VendorServicesProgramDataSet1.xsc">
+      <DependentUpon>VendorServicesProgramDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="VendorServicesProgramDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>VendorServicesProgramDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="VendorServicesProgramDataSet1.xss">
+      <DependentUpon>VendorServicesProgramDataSet1.xsd</DependentUpon>
     </None>
     <None Include="VSP.Presentation_1_TemporaryKey.pfx" />
     <None Include="VSP.Presentation_2_TemporaryKey.pfx" />
