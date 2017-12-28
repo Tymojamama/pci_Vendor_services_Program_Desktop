@@ -633,6 +633,7 @@ namespace VSP.Presentation.Forms
             dgvIssues.Columns["CreatedBy"].Visible = false;
             dgvIssues.Columns["ModifiedBy"].Visible = false;
             dgvIssues.Columns["StateCode"].Visible = false;
+            dgvIssues.Columns["AdvisorId"].Visible = false;
 
             dgvIssues.Columns["SubjectValue"].DisplayIndex = 0;
             dgvIssues.Columns["RecordKeeper"].DisplayIndex = 1;
@@ -1059,6 +1060,15 @@ namespace VSP.Presentation.Forms
             Guid planAuditorId = new Guid(dgvAuditors.Rows[index].Cells["AuditorId"].Value.ToString());
             PlanAuditor planAuditors = new PlanAuditor(planAuditorId);
             frmPlanAuditor frmPlanAuditor = new frmPlanAuditor(frmMain_Parent, planAuditors);
+            //  frmPlanAuditor.FormClosed += frmPlanRecordKeeper_FormClosed;
+        }
+
+        private void dgvAdvisors_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = dgvAdvisors.CurrentRow.Index;
+            Guid planAdvisorId = new Guid(dgvAdvisors.Rows[index].Cells["AdvisorId"].Value.ToString());
+            VSP.Business.Entities.PlanAdvisor planAdvisors = new VSP.Business.Entities.PlanAdvisor(planAdvisorId);
+            frmPlanAdvisor frmPlanAdvisor = new frmPlanAdvisor(frmMain_Parent, planAdvisors);
             //  frmPlanAuditor.FormClosed += frmPlanRecordKeeper_FormClosed;
         }
 	}
