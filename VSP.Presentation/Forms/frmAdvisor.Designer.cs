@@ -18,8 +18,8 @@
 		{
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdvisor));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -48,20 +48,23 @@
             this.tabServices = new System.Windows.Forms.TabPage();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            this.cboServicesView = new System.Windows.Forms.ComboBox();
+            this.serviceIssueBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vendorServicesProgramDataSet = new VSP.VendorServicesProgramDataSet();
             this.panel7 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.vendorServicesProgramDataSet = new VSP.VendorServicesProgramDataSet();
-            this.serviceIssueBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.serviceIssueTableAdapter = new VSP.VendorServicesProgramDataSetTableAdapters.ServiceIssueTableAdapter();
+            this.tabIssues = new System.Windows.Forms.TabPage();
             this.dgvServices = new System.Windows.Forms.DataGridView();
-            this.asOfDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subjectValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvIssues = new System.Windows.Forms.DataGridView();
+            this.subjectValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.asOfDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cboServicesView = new System.Windows.Forms.ComboBox();
             this.cboIssuesView = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel16.SuspendLayout();
@@ -71,11 +74,13 @@
             this.tabControlClientDetail.SuspendLayout();
             this.tabServices.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.vendorServicesProgramDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviceIssueBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vendorServicesProgramDataSet)).BeginInit();
+            this.panel7.SuspendLayout();
+            this.tabIssues.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvServices)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIssues)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStripSeparator3
@@ -142,6 +147,8 @@
             this.lblMenuIssues.TabIndex = 61;
             this.lblMenuIssues.Text = "Issues";
             this.lblMenuIssues.Click += new System.EventHandler(this.lblMenuIssues_Click);
+            this.lblMenuIssues.MouseEnter += new System.EventHandler(this.CloseFormButton_MouseEnter);
+            this.lblMenuIssues.MouseLeave += new System.EventHandler(this.MenuItem_MouseLeave);
             // 
             // lblMenuServices
             // 
@@ -380,6 +387,7 @@
             this.tabControlClientDetail.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.tabControlClientDetail.Controls.Add(this.tabSummary);
             this.tabControlClientDetail.Controls.Add(this.tabServices);
+            this.tabControlClientDetail.Controls.Add(this.tabIssues);
             this.tabControlClientDetail.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.tabControlClientDetail.Location = new System.Drawing.Point(-6, 0);
             this.tabControlClientDetail.Margin = new System.Windows.Forms.Padding(2);
@@ -410,8 +418,6 @@
             this.panel6.Controls.Add(this.dgvServices);
             this.panel6.Controls.Add(this.label9);
             this.panel6.Controls.Add(this.cboServicesView);
-            this.panel6.Controls.Add(this.cboIssuesView);
-            this.panel6.Controls.Add(this.dgvIssues);
             this.panel6.Location = new System.Drawing.Point(2, 46);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(968, 545);
@@ -430,18 +436,15 @@
             this.label9.TabIndex = 71;
             this.label9.Text = "Views";
             // 
-            // cboServicesView
+            // serviceIssueBindingSource
             // 
-            this.cboServicesView.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboServicesView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboServicesView.Items.AddRange(new object[] {
-            "Active Associated Services"});
-            this.cboServicesView.Location = new System.Drawing.Point(50, 7);
-            this.cboServicesView.Margin = new System.Windows.Forms.Padding(2);
-            this.cboServicesView.Name = "cboServicesView";
-            this.cboServicesView.Size = new System.Drawing.Size(157, 21);
-            this.cboServicesView.TabIndex = 70;
-            this.cboServicesView.SelectedIndexChanged += new System.EventHandler(this.cboServicesView_SelectedIndexChanged);
+            this.serviceIssueBindingSource.DataMember = "ServiceIssue";
+            this.serviceIssueBindingSource.DataSource = this.vendorServicesProgramDataSet;
+            // 
+            // vendorServicesProgramDataSet
+            // 
+            this.vendorServicesProgramDataSet.DataSetName = "VendorServicesProgramDataSet";
+            this.vendorServicesProgramDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // panel7
             // 
@@ -501,19 +504,20 @@
             this.label12.TabIndex = 40;
             this.label12.Text = "Summary";
             // 
-            // vendorServicesProgramDataSet
-            // 
-            this.vendorServicesProgramDataSet.DataSetName = "VendorServicesProgramDataSet";
-            this.vendorServicesProgramDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // serviceIssueBindingSource
-            // 
-            this.serviceIssueBindingSource.DataMember = "ServiceIssue";
-            this.serviceIssueBindingSource.DataSource = this.vendorServicesProgramDataSet;
-            // 
             // serviceIssueTableAdapter
             // 
             this.serviceIssueTableAdapter.ClearBeforeFill = true;
+            // 
+            // tabIssues
+            // 
+            this.tabIssues.Controls.Add(this.label3);
+            this.tabIssues.Controls.Add(this.panel1);
+            this.tabIssues.Location = new System.Drawing.Point(4, 25);
+            this.tabIssues.Name = "tabIssues";
+            this.tabIssues.Size = new System.Drawing.Size(981, 600);
+            this.tabIssues.TabIndex = 2;
+            this.tabIssues.Text = "tabIssues";
+            this.tabIssues.UseVisualStyleBackColor = true;
             // 
             // dgvServices
             // 
@@ -525,23 +529,23 @@
             this.dgvServices.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvServices.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvServices.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Gadugi", 8.25F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvServices.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Gadugi", 8.25F);
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvServices.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.dgvServices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Gadugi", 7.8F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvServices.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Gadugi", 7.8F);
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvServices.DefaultCellStyle = dataGridViewCellStyle20;
             this.dgvServices.EnableHeadersVisualStyles = false;
             this.dgvServices.Location = new System.Drawing.Point(8, 34);
             this.dgvServices.Margin = new System.Windows.Forms.Padding(2);
@@ -555,17 +559,25 @@
             this.dgvServices.Size = new System.Drawing.Size(944, 504);
             this.dgvServices.TabIndex = 69;
             // 
-            // asOfDateDataGridViewTextBoxColumn
+            // dgvIssues
             // 
-            this.asOfDateDataGridViewTextBoxColumn.DataPropertyName = "AsOfDate";
-            this.asOfDateDataGridViewTextBoxColumn.HeaderText = "AsOfDate";
-            this.asOfDateDataGridViewTextBoxColumn.Name = "asOfDateDataGridViewTextBoxColumn";
-            // 
-            // descriptionValueDataGridViewTextBoxColumn
-            // 
-            this.descriptionValueDataGridViewTextBoxColumn.DataPropertyName = "DescriptionValue";
-            this.descriptionValueDataGridViewTextBoxColumn.HeaderText = "DescriptionValue";
-            this.descriptionValueDataGridViewTextBoxColumn.Name = "descriptionValueDataGridViewTextBoxColumn";
+            this.dgvIssues.AllowUserToAddRows = false;
+            this.dgvIssues.AllowUserToDeleteRows = false;
+            this.dgvIssues.AutoGenerateColumns = false;
+            this.dgvIssues.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(218)))), ((int)(((byte)(219)))));
+            this.dgvIssues.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvIssues.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvIssues.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.subjectValueDataGridViewTextBoxColumn,
+            this.descriptionValueDataGridViewTextBoxColumn,
+            this.asOfDateDataGridViewTextBoxColumn});
+            this.dgvIssues.DataSource = this.serviceIssueBindingSource;
+            this.dgvIssues.GridColor = System.Drawing.SystemColors.AppWorkspace;
+            this.dgvIssues.Location = new System.Drawing.Point(10, 37);
+            this.dgvIssues.Name = "dgvIssues";
+            this.dgvIssues.Size = new System.Drawing.Size(928, 468);
+            this.dgvIssues.TabIndex = 73;
+            this.dgvIssues.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvIssues_CellContentClick_1);
             // 
             // subjectValueDataGridViewTextBoxColumn
             // 
@@ -573,22 +585,30 @@
             this.subjectValueDataGridViewTextBoxColumn.HeaderText = "SubjectValue";
             this.subjectValueDataGridViewTextBoxColumn.Name = "subjectValueDataGridViewTextBoxColumn";
             // 
-            // dgvIssues
+            // descriptionValueDataGridViewTextBoxColumn
             // 
-            this.dgvIssues.AllowUserToAddRows = false;
-            this.dgvIssues.AllowUserToDeleteRows = false;
-            this.dgvIssues.AutoGenerateColumns = false;
-            this.dgvIssues.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvIssues.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.subjectValueDataGridViewTextBoxColumn,
-            this.descriptionValueDataGridViewTextBoxColumn,
-            this.asOfDateDataGridViewTextBoxColumn});
-            this.dgvIssues.DataSource = this.serviceIssueBindingSource;
-            this.dgvIssues.Location = new System.Drawing.Point(8, 34);
-            this.dgvIssues.Name = "dgvIssues";
-            this.dgvIssues.Size = new System.Drawing.Size(944, 503);
-            this.dgvIssues.TabIndex = 72;
-            this.dgvIssues.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvIssues_CellContentClick);
+            this.descriptionValueDataGridViewTextBoxColumn.DataPropertyName = "DescriptionValue";
+            this.descriptionValueDataGridViewTextBoxColumn.HeaderText = "DescriptionValue";
+            this.descriptionValueDataGridViewTextBoxColumn.Name = "descriptionValueDataGridViewTextBoxColumn";
+            // 
+            // asOfDateDataGridViewTextBoxColumn
+            // 
+            this.asOfDateDataGridViewTextBoxColumn.DataPropertyName = "AsOfDate";
+            this.asOfDateDataGridViewTextBoxColumn.HeaderText = "AsOfDate";
+            this.asOfDateDataGridViewTextBoxColumn.Name = "asOfDateDataGridViewTextBoxColumn";
+            // 
+            // cboServicesView
+            // 
+            this.cboServicesView.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboServicesView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboServicesView.Items.AddRange(new object[] {
+            "Active Associated Services"});
+            this.cboServicesView.Location = new System.Drawing.Point(50, 6);
+            this.cboServicesView.Margin = new System.Windows.Forms.Padding(2);
+            this.cboServicesView.Name = "cboServicesView";
+            this.cboServicesView.Size = new System.Drawing.Size(157, 21);
+            this.cboServicesView.TabIndex = 70;
+            this.cboServicesView.SelectedIndexChanged += new System.EventHandler(this.cboServicesView_SelectedIndexChanged);
             // 
             // cboIssuesView
             // 
@@ -596,11 +616,33 @@
             this.cboIssuesView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboIssuesView.Items.AddRange(new object[] {
             "Active Associated Services"});
-            this.cboIssuesView.Location = new System.Drawing.Point(50, 6);
+            this.cboIssuesView.Location = new System.Drawing.Point(2, 11);
             this.cboIssuesView.Margin = new System.Windows.Forms.Padding(2);
             this.cboIssuesView.Name = "cboIssuesView";
             this.cboIssuesView.Size = new System.Drawing.Size(157, 21);
-            this.cboIssuesView.TabIndex = 73;
+            this.cboIssuesView.TabIndex = 74;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(218)))), ((int)(((byte)(219)))));
+            this.panel1.Controls.Add(this.cboIssuesView);
+            this.panel1.Controls.Add(this.dgvIssues);
+            this.panel1.Location = new System.Drawing.Point(4, 54);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(952, 526);
+            this.panel1.TabIndex = 76;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("High Tower Text", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(4, 7);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(217, 44);
+            this.label3.TabIndex = 77;
+            this.label3.Text = "Service Issue";
             // 
             // frmAdvisor
             // 
@@ -634,12 +676,15 @@
             this.tabServices.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.serviceIssueBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vendorServicesProgramDataSet)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.vendorServicesProgramDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.serviceIssueBindingSource)).EndInit();
+            this.tabIssues.ResumeLayout(false);
+            this.tabIssues.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvServices)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIssues)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -670,7 +715,6 @@
         private System.Windows.Forms.TabPage tabServices;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label9;
-        public System.Windows.Forms.ComboBox cboServicesView;
         private System.Windows.Forms.Panel panel7;
         public System.Windows.Forms.Label label10;
         public System.Windows.Forms.Label label12;
@@ -679,11 +723,15 @@
         private VendorServicesProgramDataSet vendorServicesProgramDataSet;
         private System.Windows.Forms.BindingSource serviceIssueBindingSource;
         private VendorServicesProgramDataSetTableAdapters.ServiceIssueTableAdapter serviceIssueTableAdapter;
+        private System.Windows.Forms.TabPage tabIssues;
         public System.Windows.Forms.DataGridView dgvServices;
-        public System.Windows.Forms.ComboBox cboIssuesView;
         private System.Windows.Forms.DataGridView dgvIssues;
         private System.Windows.Forms.DataGridViewTextBoxColumn subjectValueDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionValueDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn asOfDateDataGridViewTextBoxColumn;
+        public System.Windows.Forms.ComboBox cboServicesView;
+        public System.Windows.Forms.ComboBox cboIssuesView;
+        private System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.Label label3;
 	}
 }
