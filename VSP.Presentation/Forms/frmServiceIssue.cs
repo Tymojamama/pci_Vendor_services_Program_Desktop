@@ -38,6 +38,7 @@ namespace VSP.Presentation.Forms
 
         private frmMain frmMain_Parent;
         public VSP.Business.Entities.ServiceIssue CurrentServiceIssue;
+        private Advisor CurrentPlanAdvisor;
 
         public frmServiceIssue(frmMain mf, DataIntegrationHub.Business.Entities.Plan plan, FormClosedEventHandler Close = null)
         {
@@ -229,6 +230,13 @@ namespace VSP.Presentation.Forms
             ss.Close();
             this.Show();
 		}
+
+        public frmServiceIssue(frmMain frmMain_Parent, Advisor CurrentPlanAdvisor)
+        {
+            // TODO: Complete member initialization
+            this.frmMain_Parent = frmMain_Parent;
+            this.CurrentPlanAdvisor = CurrentPlanAdvisor;
+        }
 
         public void PreloadCbos()
         {
