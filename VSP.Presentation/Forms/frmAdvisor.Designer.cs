@@ -18,8 +18,10 @@
 		{
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdvisor));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -62,14 +64,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.cboIssuesView = new System.Windows.Forms.ComboBox();
             this.dgvIssues = new System.Windows.Forms.DataGridView();
-            this.serviceIssueBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.vendorServicesProgramDataSet = new VSP.VendorServicesProgramDataSet();
-            this.serviceIssueTableAdapter = new VSP.VendorServicesProgramDataSetTableAdapters.ServiceIssueTableAdapter();
-            this.subjectValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AsOfDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CreatedOn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ModifiedOn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel16.SuspendLayout();
@@ -84,8 +78,6 @@
             this.tabIssues.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIssues)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.serviceIssueBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vendorServicesProgramDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStripSeparator3
@@ -438,23 +430,23 @@
             this.dgvServices.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvServices.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvServices.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Gadugi", 8.25F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvServices.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Gadugi", 8.25F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvServices.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvServices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Gadugi", 7.8F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvServices.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Gadugi", 7.8F);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvServices.DefaultCellStyle = dataGridViewCellStyle10;
             this.dgvServices.EnableHeadersVisualStyles = false;
             this.dgvServices.Location = new System.Drawing.Point(8, 34);
             this.dgvServices.Margin = new System.Windows.Forms.Padding(2);
@@ -580,11 +572,11 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(218)))), ((int)(((byte)(219)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.dgvIssues);
             this.panel1.Controls.Add(this.btnDeleteIssue);
             this.panel1.Controls.Add(this.btnNewIssue);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.cboIssuesView);
-            this.panel1.Controls.Add(this.dgvIssues);
             this.panel1.Location = new System.Drawing.Point(-4, 51);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(982, 543);
@@ -651,75 +643,44 @@
             // 
             this.dgvIssues.AllowUserToAddRows = false;
             this.dgvIssues.AllowUserToDeleteRows = false;
-            this.dgvIssues.AutoGenerateColumns = false;
-            this.dgvIssues.BackgroundColor = System.Drawing.SystemColors.ControlDark;
-            this.dgvIssues.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvIssues.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.subjectValueDataGridViewTextBoxColumn,
-            this.descriptionValueDataGridViewTextBoxColumn,
-            this.AsOfDate,
-            this.CreatedOn,
-            this.ModifiedOn});
-            this.dgvIssues.DataSource = this.serviceIssueBindingSource;
-            this.dgvIssues.Location = new System.Drawing.Point(16, 36);
+            this.dgvIssues.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvIssues.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvIssues.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvIssues.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Gadugi", 8.25F);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvIssues.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            this.dgvIssues.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Gadugi", 7.8F);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvIssues.DefaultCellStyle = dataGridViewCellStyle12;
+            this.dgvIssues.EnableHeadersVisualStyles = false;
+            this.dgvIssues.Location = new System.Drawing.Point(12, 35);
+            this.dgvIssues.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvIssues.MultiSelect = false;
             this.dgvIssues.Name = "dgvIssues";
             this.dgvIssues.ReadOnly = true;
-            this.dgvIssues.Size = new System.Drawing.Size(945, 490);
-            this.dgvIssues.TabIndex = 73;
+            this.dgvIssues.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvIssues.RowHeadersVisible = false;
+            this.dgvIssues.RowTemplate.Height = 24;
+            this.dgvIssues.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgvIssues.ShowEditingIcon = false;
+            this.dgvIssues.Size = new System.Drawing.Size(944, 504);
+            this.dgvIssues.TabIndex = 78;
             this.dgvIssues.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvIssues_CellContentClick);
-            this.dgvIssues.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvIssues_CellDoubleClick);
-            this.dgvIssues.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvIssues_CellDoubleClick);
-            // 
-            // serviceIssueBindingSource
-            // 
-            this.serviceIssueBindingSource.DataMember = "ServiceIssue";
-            this.serviceIssueBindingSource.DataSource = this.vendorServicesProgramDataSet;
-            // 
-            // vendorServicesProgramDataSet
-            // 
-            this.vendorServicesProgramDataSet.DataSetName = "VendorServicesProgramDataSet";
-            this.vendorServicesProgramDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // serviceIssueTableAdapter
-            // 
-            this.serviceIssueTableAdapter.ClearBeforeFill = true;
-            // 
-            // subjectValueDataGridViewTextBoxColumn
-            // 
-            this.subjectValueDataGridViewTextBoxColumn.DataPropertyName = "SubjectValue";
-            this.subjectValueDataGridViewTextBoxColumn.HeaderText = "SubjectValue";
-            this.subjectValueDataGridViewTextBoxColumn.Name = "subjectValueDataGridViewTextBoxColumn";
-            this.subjectValueDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // descriptionValueDataGridViewTextBoxColumn
-            // 
-            this.descriptionValueDataGridViewTextBoxColumn.DataPropertyName = "DescriptionValue";
-            this.descriptionValueDataGridViewTextBoxColumn.HeaderText = "DescriptionValue";
-            this.descriptionValueDataGridViewTextBoxColumn.Name = "descriptionValueDataGridViewTextBoxColumn";
-            this.descriptionValueDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // AsOfDate
-            // 
-            this.AsOfDate.DataPropertyName = "AsOfDate";
-            this.AsOfDate.HeaderText = "AsOfDate";
-            this.AsOfDate.Name = "AsOfDate";
-            this.AsOfDate.ReadOnly = true;
-            // 
-            // CreatedOn
-            // 
-            this.CreatedOn.DataPropertyName = "CreatedOn";
-            this.CreatedOn.HeaderText = "CreatedOn";
-            this.CreatedOn.Name = "CreatedOn";
-            this.CreatedOn.ReadOnly = true;
-            // 
-            // ModifiedOn
-            // 
-            this.ModifiedOn.DataPropertyName = "ModifiedOn";
-            this.ModifiedOn.HeaderText = "ModifiedOn";
-            this.ModifiedOn.Name = "ModifiedOn";
-            this.ModifiedOn.ReadOnly = true;
-            // 
-            // frmAdvisor
+           // frmAdvisor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -736,8 +697,7 @@
             this.Name = "frmAdvisor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Plan Advisor";
-            this.Load += new System.EventHandler(this.frmAdvisor_Load);
-            this.panel4.ResumeLayout(false);
+           this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel16.ResumeLayout(false);
@@ -759,8 +719,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIssues)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.serviceIssueBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vendorServicesProgramDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -796,12 +754,8 @@
         public System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblMenuIssues;
-        private VendorServicesProgramDataSet vendorServicesProgramDataSet;
-        private System.Windows.Forms.BindingSource serviceIssueBindingSource;
-        private VendorServicesProgramDataSetTableAdapters.ServiceIssueTableAdapter serviceIssueTableAdapter;
         private System.Windows.Forms.TabPage tabIssues;
         public System.Windows.Forms.DataGridView dgvServices;
-        private System.Windows.Forms.DataGridView dgvIssues;
         public System.Windows.Forms.ComboBox cboServicesView;
         public System.Windows.Forms.ComboBox cboIssuesView;
         private System.Windows.Forms.Panel panel1;
@@ -809,10 +763,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnNewIssue;
         private System.Windows.Forms.Button btnDeleteIssue;
-        private System.Windows.Forms.DataGridViewTextBoxColumn subjectValueDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionValueDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AsOfDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CreatedOn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ModifiedOn;
+        public System.Windows.Forms.DataGridView dgvIssues;
 	}
 }
