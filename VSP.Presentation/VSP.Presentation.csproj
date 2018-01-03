@@ -61,10 +61,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>739C09855FD42135AE7805812D92A3B14B6910D8</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>037B0B97E87E13781D3334F2F08B0C955824BFF7</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>VSP.Presentation_3_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>VSP.Presentation_4_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -385,6 +385,7 @@
     <None Include="VSP.Presentation_1_TemporaryKey.pfx" />
     <None Include="VSP.Presentation_2_TemporaryKey.pfx" />
     <None Include="VSP.Presentation_3_TemporaryKey.pfx" />
+    <None Include="VSP.Presentation_4_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
