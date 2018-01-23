@@ -67,8 +67,7 @@ namespace VSP.Presentation.Forms
 
             cboServicesView.SelectedIndex = 0;
             LoadDgvServices(true);
-            cboIssuesView.SelectedIndex = 0;
-            LoadDgvIssues();
+
             ss.Close();
             this.Show();
 		}
@@ -397,10 +396,6 @@ namespace VSP.Presentation.Forms
         private void cboServicesView_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadDgvServices();
-        }
-        private void cboIssuesView_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            LoadDgvIssues();
         }
 
       

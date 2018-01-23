@@ -1079,6 +1079,7 @@
             this.dgvAuditors.ShowEditingIcon = false;
             this.dgvAuditors.Size = new System.Drawing.Size(944, 488);
             this.dgvAuditors.TabIndex = 69;
+            this.dgvAuditors.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAuditors_CellContentClick);
             this.dgvAuditors.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAuditors_CellContentClick);
             // 
             // label7
@@ -1247,7 +1248,6 @@
             this.dgvAdvisors.ShowEditingIcon = false;
             this.dgvAdvisors.Size = new System.Drawing.Size(944, 488);
             this.dgvAdvisors.TabIndex = 69;
-            this.dgvAdvisors.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAdvisors_CellContentClick);
             // 
             // label10
             // 
