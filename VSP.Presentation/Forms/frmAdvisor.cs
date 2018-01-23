@@ -230,7 +230,7 @@ namespace VSP.Presentation.Forms
         {
             DataTable dataTable = new DataTable();
 
-            /// Set the datatable based on the SelectedIndex of <see cref="cboIssueViews"/>.
+            /// Set the datatable based on the SelectedIndex of <see cref="cboIssuesView"/>.
             switch (cboIssuesView.SelectedIndex)
             {
                 case 0:
@@ -245,7 +245,7 @@ namespace VSP.Presentation.Forms
 
             if (dataTable.Rows.Count > 0)
             {
-                var dt = dataTable.AsEnumerable().Where(x => x.Field<Guid>("PlanAdvisorId") == CurrentPlanAdvisor.Id);
+                var dt = dataTable.AsEnumerable().Where(x => x.Field<Guid?>("AdvisorId") == CurrentPlanAdvisor.Id);
                 if (dt.Any())
                 {
                     dataTable = dt.CopyToDataTable();
@@ -256,7 +256,7 @@ namespace VSP.Presentation.Forms
                 }
             }
 
-               // Add plan name column and fill data
+            // Add plan name column and fill data
             dataTable.Columns.Add("Plan");
             foreach (DataRow dr in dataTable.Rows)
             {
@@ -280,6 +280,7 @@ namespace VSP.Presentation.Forms
             dgvIssues.Columns["CreatedBy"].Visible = false;
             dgvIssues.Columns["ModifiedBy"].Visible = false;
             dgvIssues.Columns["StateCode"].Visible = false;
+           // dgvIssues.Columns["AdvisorId"].Visible = false;
 
             dgvIssues.Columns["SubjectValue"].DisplayIndex = 0;
             dgvIssues.Columns["Plan"].DisplayIndex = 1;
@@ -401,6 +402,14 @@ namespace VSP.Presentation.Forms
         private void cboIssuesView_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadDgvIssues();
+        }
+
+      
+        private void frmAdvisor_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'vendorServicesProgramDataSet.ServiceIssue' table. You can move, or remove it, as needed.
+            this.serviceIssueTableAdapter.Fill(this.vendorServicesProgramDataSet.ServiceIssue);
+
         }
 
         private void dgvIssues_CellContentClick(object sender, DataGridViewCellEventArgs e)

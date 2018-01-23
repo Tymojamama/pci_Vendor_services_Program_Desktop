@@ -76,11 +76,6 @@ namespace VSP.Presentation.Forms
                 cboAuditor.Text = new DataIntegrationHub.Business.Entities.Auditor((Guid)CurrentServiceIssue.AuditorId).Name;
             }
 
-            if (CurrentServiceIssue.AdvisorId != null)
-            {
-                cboAdvisor.Text = new DataIntegrationHub.Business.Entities.PlanAdvisor((Guid)CurrentServiceIssue.AdvisorId).Name;
-            }
-
             if (CurrentServiceIssue.PlanId != null)
             {
                 cboPlan.Text = plan.Name + " - " + plan.Description;
@@ -126,11 +121,6 @@ namespace VSP.Presentation.Forms
             if (CurrentServiceIssue.AuditorId != null)
             {
                 cboAuditor.Text = new DataIntegrationHub.Business.Entities.Auditor((Guid)CurrentServiceIssue.AuditorId).Name;
-            }
-
-            if (CurrentServiceIssue.AdvisorId != null)
-            {
-                cboAdvisor.Text = new DataIntegrationHub.Business.Entities.PlanAdvisor((Guid)CurrentServiceIssue.AdvisorId).Name;
             }
 
             if (CurrentServiceIssue.PlanId != null)
@@ -180,11 +170,6 @@ namespace VSP.Presentation.Forms
             {
                 cboAuditor.Text = new DataIntegrationHub.Business.Entities.Auditor((Guid)CurrentServiceIssue.AuditorId).Name;
             }
-            if (CurrentServiceIssue.AdvisorId != null)
-            {
-                cboAdvisor.Text = new DataIntegrationHub.Business.Entities.PlanAdvisor((Guid)CurrentServiceIssue.AdvisorId).Name;
-            }
-           
 
             if (CurrentServiceIssue.PlanId != null)
             {
@@ -233,11 +218,6 @@ namespace VSP.Presentation.Forms
                 cboAuditor.Text = new DataIntegrationHub.Business.Entities.Auditor((Guid)CurrentServiceIssue.AuditorId).Name;
             }
 
-            if (CurrentServiceIssue.AdvisorId != null)
-            {
-                cboAdvisor.Text = new DataIntegrationHub.Business.Entities.PlanAdvisor((Guid)CurrentServiceIssue.AdvisorId).Name;
-            }
-
             if (CurrentServiceIssue.PlanId != null)
             {
                 cboPlan.Text = new Plan((Guid)CurrentServiceIssue.PlanId).Name;
@@ -263,12 +243,10 @@ namespace VSP.Presentation.Forms
             cboRecordKeeper.Items.Clear();
             cboAuditor.Items.Clear();
             cboPlan.Items.Clear();
-            cboAdvisor.Items.Clear();
 
             cboRecordKeeper.Items.Add(new ListItem("", ""));
             cboAuditor.Items.Add(new ListItem("", ""));
             cboPlan.Items.Add(new ListItem("", ""));
-            cboAdvisor.Items.Add(new ListItem("", ""));
 
             foreach (DataRow dr in DataIntegrationHub.Business.Entities.RecordKeeper.GetAll().Rows)
             {
@@ -282,12 +260,6 @@ namespace VSP.Presentation.Forms
                 Guid auditorId = new Guid(dr["AuditorId"].ToString());
                 string name = dr["Name"].ToString();
                 cboAuditor.Items.Add(new ListItem(name, auditorId));
-            }
-            foreach (DataRow dr in DataIntegrationHub.Business.Entities.PlanAdvisor.GetAll().Rows)
-            {
-                Guid PlanAdvisorId = new Guid(dr["PlanAdvisorId"].ToString());
-                string name = dr["Name"].ToString();
-                cboAuditor.Items.Add(new ListItem(name, PlanAdvisorId));
             }
 
             foreach (Plan plan in Plan.Get().OrderBy(x => x.Name))
@@ -407,17 +379,6 @@ namespace VSP.Presentation.Forms
                 CurrentServiceIssue.RecordKeeperId = recordKeeperId;
             }
 
-            if (cboAdvisor.SelectedIndex <= 0)
-            {
-                CurrentServiceIssue.AdvisorId = null;
-            }
-            else
-            {
-                ListItem li = (ListItem)cboAdvisor.SelectedItem;
-                Guid AdvisorId = (Guid)li.HiddenObject;
-                CurrentServiceIssue.AdvisorId = AdvisorId;
-            }
-
             if (cboAuditor.SelectedIndex <= 0)
             {
                 CurrentServiceIssue.AuditorId = null;
@@ -427,17 +388,6 @@ namespace VSP.Presentation.Forms
                 ListItem li = (ListItem)cboAuditor.SelectedItem;
                 Guid auditorId = (Guid)li.HiddenObject;
                 CurrentServiceIssue.AuditorId = auditorId;
-            }
-
-            if (cboAdvisor.SelectedIndex <= 0)
-            {
-                CurrentServiceIssue.AdvisorId = null;
-            }
-            else
-            {
-                ListItem li = (ListItem)cboAdvisor.SelectedItem;
-                Guid advisorId = (Guid)li.HiddenObject;
-                CurrentServiceIssue.AdvisorId = advisorId;
             }
 
             if (cboPlan.SelectedIndex <= 0)

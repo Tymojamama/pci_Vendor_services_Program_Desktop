@@ -208,7 +208,7 @@ namespace VSP.Presentation.Forms
 
             if (dataTable.Rows.Count > 0)
             {
-                var dt = dataTable.AsEnumerable().Where(x => x.Field<Guid>("AuditorId") == CurrentAuditor.Id);
+                var dt = dataTable.AsEnumerable().Where(x => x.Field<Guid?>("AuditorId") == CurrentAuditor.Id);
                 if (dt.Any())
                 {
                     dataTable = dt.CopyToDataTable();
@@ -243,6 +243,7 @@ namespace VSP.Presentation.Forms
             dgvIssues.Columns["CreatedBy"].Visible = false;
             dgvIssues.Columns["ModifiedBy"].Visible = false;
             dgvIssues.Columns["StateCode"].Visible = false;
+            dgvIssues.Columns["AdvisorId"].Visible = false;
 
             dgvIssues.Columns["SubjectValue"].DisplayIndex = 0;
             dgvIssues.Columns["Plan"].DisplayIndex = 1;
