@@ -18,8 +18,8 @@
 		{
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdvisor));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -65,6 +65,7 @@
             this.serviceIssueBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vendorServicesProgramDataSet = new VSP.VendorServicesProgramDataSet();
             this.serviceIssueTableAdapter = new VSP.VendorServicesProgramDataSetTableAdapters.ServiceIssueTableAdapter();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subjectValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AsOfDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -438,23 +439,23 @@
             this.dgvServices.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvServices.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvServices.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Gadugi", 8.25F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvServices.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Gadugi", 8.25F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvServices.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvServices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Gadugi", 7.8F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvServices.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Gadugi", 7.8F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvServices.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvServices.EnableHeadersVisualStyles = false;
             this.dgvServices.Location = new System.Drawing.Point(8, 34);
             this.dgvServices.Margin = new System.Windows.Forms.Padding(2);
@@ -604,7 +605,6 @@
             this.btnDeleteIssue.TabIndex = 77;
             this.btnDeleteIssue.Text = "Delete";
             this.btnDeleteIssue.UseVisualStyleBackColor = false;
-            this.btnDeleteIssue.Click += new System.EventHandler(this.btnDeleteIssue_Click);
             // 
             // btnNewIssue
             // 
@@ -655,6 +655,7 @@
             this.dgvIssues.BackgroundColor = System.Drawing.SystemColors.ControlDark;
             this.dgvIssues.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvIssues.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
             this.subjectValueDataGridViewTextBoxColumn,
             this.descriptionValueDataGridViewTextBoxColumn,
             this.AsOfDate,
@@ -667,7 +668,6 @@
             this.dgvIssues.Size = new System.Drawing.Size(945, 490);
             this.dgvIssues.TabIndex = 73;
             this.dgvIssues.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvIssues_CellContentClick);
-            this.dgvIssues.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvIssues_CellDoubleClick);
             this.dgvIssues.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvIssues_CellDoubleClick);
             // 
             // serviceIssueBindingSource
@@ -684,12 +684,21 @@
             // 
             this.serviceIssueTableAdapter.ClearBeforeFill = true;
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "ServiceIssueId";
+            this.Column1.HeaderText = "ServiceIssueId";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
+            // 
             // subjectValueDataGridViewTextBoxColumn
             // 
             this.subjectValueDataGridViewTextBoxColumn.DataPropertyName = "SubjectValue";
             this.subjectValueDataGridViewTextBoxColumn.HeaderText = "SubjectValue";
             this.subjectValueDataGridViewTextBoxColumn.Name = "subjectValueDataGridViewTextBoxColumn";
             this.subjectValueDataGridViewTextBoxColumn.ReadOnly = true;
+            this.subjectValueDataGridViewTextBoxColumn.Width = 225;
             // 
             // descriptionValueDataGridViewTextBoxColumn
             // 
@@ -697,6 +706,7 @@
             this.descriptionValueDataGridViewTextBoxColumn.HeaderText = "DescriptionValue";
             this.descriptionValueDataGridViewTextBoxColumn.Name = "descriptionValueDataGridViewTextBoxColumn";
             this.descriptionValueDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descriptionValueDataGridViewTextBoxColumn.Width = 225;
             // 
             // AsOfDate
             // 
@@ -711,6 +721,7 @@
             this.CreatedOn.HeaderText = "CreatedOn";
             this.CreatedOn.Name = "CreatedOn";
             this.CreatedOn.ReadOnly = true;
+            this.CreatedOn.Width = 225;
             // 
             // ModifiedOn
             // 
@@ -718,6 +729,7 @@
             this.ModifiedOn.HeaderText = "ModifiedOn";
             this.ModifiedOn.Name = "ModifiedOn";
             this.ModifiedOn.ReadOnly = true;
+            this.ModifiedOn.Width = 225;
             // 
             // frmAdvisor
             // 
@@ -809,6 +821,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnNewIssue;
         private System.Windows.Forms.Button btnDeleteIssue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn subjectValueDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionValueDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn AsOfDate;
