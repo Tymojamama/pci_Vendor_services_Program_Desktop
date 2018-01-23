@@ -67,10 +67,8 @@ namespace VSP.Presentation.Forms
 
             cboServicesView.SelectedIndex = 0;
             LoadDgvServices(true);
-
             cboIssuesView.SelectedIndex = 0;
-            //LoadDgvIssues();
-
+            LoadDgvIssues();
             ss.Close();
             this.Show();
 		}
@@ -281,7 +279,7 @@ namespace VSP.Presentation.Forms
             dgvIssues.Columns["CreatedBy"].Visible = false;
             dgvIssues.Columns["ModifiedBy"].Visible = false;
             dgvIssues.Columns["StateCode"].Visible = false;
-           // dgvIssues.Columns["AdvisorId"].Visible = false;
+            dgvIssues.Columns["AdvisorId"].Visible = false;
 
             dgvIssues.Columns["SubjectValue"].DisplayIndex = 0;
             dgvIssues.Columns["Plan"].DisplayIndex = 1;
@@ -414,16 +412,6 @@ namespace VSP.Presentation.Forms
         }
 
         private void dgvIssues_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dgvIssues_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
         {
 
         }
