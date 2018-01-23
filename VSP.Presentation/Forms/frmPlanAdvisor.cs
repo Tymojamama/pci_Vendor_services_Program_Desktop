@@ -124,7 +124,6 @@ namespace VSP.Presentation.Forms
             }
 
             cboFeeViews.SelectedIndex = 0;
-            
 
             ss.Close();
             this.Show();
@@ -360,7 +359,7 @@ namespace VSP.Presentation.Forms
 
         private void label6_Click(object sender, EventArgs e)
         {
-         tabControlClientDetail.SelectedTab = tabControlClientDetail.TabPages["tabFees"];
+
         }
 	}
 }
