@@ -69,7 +69,8 @@ namespace VSP.Presentation.Forms
             LoadDgvServices(true);
 
             cboIssuesView.SelectedIndex = 0;
-          
+            //LoadDgvIssues();
+
             ss.Close();
             this.Show();
 		}
@@ -417,20 +418,14 @@ namespace VSP.Presentation.Forms
 
         }
 
+        private void dgvIssues_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         private void label2_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnNewIssue_Click(object sender, EventArgs e)
-        {
-            frmServiceIssue frmServiceIssue = new frmServiceIssue(frmMain_Parent, CurrentPlanAdvisor);
-            frmServiceIssue.FormClosed += frmServiceIssue_FormClosed;
         }
 	}
 }
