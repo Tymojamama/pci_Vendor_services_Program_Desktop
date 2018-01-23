@@ -18,7 +18,6 @@ namespace VSP.Business.Entities
         public string SubjectValue;
         public string DescriptionValue;
         public DateTime AsOfDate;
-        public Guid? AdvisorId;
 
         private static string _tableName = "ServiceIssue";
 
@@ -46,7 +45,6 @@ namespace VSP.Business.Entities
             base.AddColumn("SubjectValue", this.SubjectValue);
             base.AddColumn("DescriptionValue", this.DescriptionValue);
             base.AddColumn("AsOfDate", this.AsOfDate);
-            base.AddColumn("AdvisorId", this.AdvisorId);
         }
 
         /// <summary>
@@ -60,7 +58,6 @@ namespace VSP.Business.Entities
             this.SubjectValue = (string)base.GetColumn("SubjectValue");
             this.DescriptionValue = (string)base.GetColumn("DescriptionValue");
             this.AsOfDate = (DateTime)base.GetColumn("AsOfDate");
-            this.AdvisorId = (Guid?)base.GetColumn("AdvisorId");
         }
 
         public static DataTable GetActive()
