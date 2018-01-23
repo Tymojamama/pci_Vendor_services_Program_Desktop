@@ -969,10 +969,5 @@ namespace VSP.Presentation.Forms
                 LoadDgvSearches();
             }
         }
-
-        private void dgvClients_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }
