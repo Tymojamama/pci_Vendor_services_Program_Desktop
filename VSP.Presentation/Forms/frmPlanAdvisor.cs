@@ -356,10 +356,5 @@ namespace VSP.Presentation.Forms
         {
             tabControlClientDetail.SelectedTab = tabControlClientDetail.TabPages["tabServices"];
         }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
 	}
 }

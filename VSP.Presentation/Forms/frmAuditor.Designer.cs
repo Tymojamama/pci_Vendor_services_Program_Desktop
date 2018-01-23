@@ -17,8 +17,8 @@
 		private void InitializeComponent()
 		{
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAuditor));
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
@@ -62,7 +62,6 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.lblMenuServices = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel16.SuspendLayout();
@@ -119,7 +118,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.Silver;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.lblMenuServices);
             this.panel3.Controls.Add(this.lblMenuIssues);
             this.panel3.Controls.Add(this.lblMenuSummary);
             this.panel3.Location = new System.Drawing.Point(0, 615);
@@ -134,7 +132,7 @@
             this.lblMenuIssues.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblMenuIssues.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMenuIssues.ForeColor = System.Drawing.Color.Black;
-            this.lblMenuIssues.Location = new System.Drawing.Point(209, 15);
+            this.lblMenuIssues.Location = new System.Drawing.Point(117, 15);
             this.lblMenuIssues.Name = "lblMenuIssues";
             this.lblMenuIssues.Size = new System.Drawing.Size(68, 25);
             this.lblMenuIssues.TabIndex = 0;
@@ -530,23 +528,23 @@
             this.dgvIssues.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvIssues.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvIssues.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Gadugi", 8.25F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvIssues.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Gadugi", 8.25F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvIssues.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvIssues.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Gadugi", 7.8F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvIssues.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Gadugi", 7.8F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvIssues.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvIssues.EnableHeadersVisualStyles = false;
             this.dgvIssues.Location = new System.Drawing.Point(8, 34);
             this.dgvIssues.Margin = new System.Windows.Forms.Padding(2);
@@ -655,19 +653,6 @@
             this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton3.Text = "Save and New";
             // 
-            // lblMenuServices
-            // 
-            this.lblMenuServices.AutoSize = true;
-            this.lblMenuServices.BackColor = System.Drawing.Color.Transparent;
-            this.lblMenuServices.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblMenuServices.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMenuServices.ForeColor = System.Drawing.Color.Black;
-            this.lblMenuServices.Location = new System.Drawing.Point(117, 15);
-            this.lblMenuServices.Name = "lblMenuServices";
-            this.lblMenuServices.Size = new System.Drawing.Size(86, 25);
-            this.lblMenuServices.TabIndex = 1;
-            this.lblMenuServices.Text = "Services";
-            // 
             // frmAuditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -747,6 +732,5 @@
         public System.Windows.Forms.ComboBox cboIssueViews;
         private System.Windows.Forms.Button btnNewIssue;
         private System.Windows.Forms.Button btnDeleteIssue;
-        private System.Windows.Forms.Label lblMenuServices;
 	}
 }
